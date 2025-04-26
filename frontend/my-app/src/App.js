@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './App.css'; // make sure this line is here!
+import "./App.css"; // make sure this line is here!
 
 function App() {
   const [query, setQuery] = useState("");
@@ -14,17 +14,17 @@ function App() {
     setError("");
 
     try {
-      const response = await fetch('http://localhost:5000/ask', {
-        method: 'POST',
+      const response = await fetch("http://localhost:5000/ask", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ query }),
       });
 
       const data = await response.json();
       if (response.ok) {
-        setAnswer(data.answer);
+        setAnswer(data.retrieved_place_ids);
       } else {
         setError(data.error || "Something went wrong.");
       }
@@ -48,11 +48,7 @@ function App() {
           onChange={(e) => setQuery(e.target.value)}
           required
         />
-        <button
-          type="submit"
-          className="button"
-          disabled={loading}
-        >
+        <button type="submit" className="button" disabled={loading}>
           {loading ? "Thinking..." : "Ask"}
         </button>
       </form>
@@ -64,11 +60,7 @@ function App() {
         </div>
       )}
 
-      {error && (
-        <div className="error-message">
-          {error}
-        </div>
-      )}
+      {error && <div className="error-message">{error}</div>}
     </div>
   );
 }
