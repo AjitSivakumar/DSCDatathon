@@ -1,2 +1,8 @@
-Flask
-flask-cors
+flask
+langchain>=0.1.0
+faiss-cpu  # If you don't have a GPU; otherwise use faiss-gpu
+openai
+pandas
+numpy>=1.24
+transformers>=4.36.0
+sentence-transformers
