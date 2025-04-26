@@ -19,10 +19,10 @@ CORS(app)
 # --- FAISS & Embedding Setup ---
 
 # Read the CSV file and extract embeddings and texts
-data = pd.read_csv('datatesting\\files\\p2\\datathon_p2\\combined_embeddings.csv')
+data = pd.read_csv('datatesting\\files\\p2\\datathon_p2\\Bruv.csv')
 embedding_columns = [col for col in data.columns if col.isdigit()]
 embeddings = data[embedding_columns].to_numpy()
-texts = data['place_id'].tolist()
+texts = data['name'].tolist()
 documents = [Document(page_content=text) for text in texts]
 
 dimension = embeddings.shape[1]

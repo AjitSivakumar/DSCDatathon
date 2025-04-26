@@ -2,6 +2,14 @@
 
 Ajit Sivakumar, Daniel Liang, Aarit Hundi, Gavin Gong
 
-This is boutta be assssss.
 
 pip install langchain faiss-cpu openai sentence-transformers
+
+
+Frontend:
+cd frontend
+npm start
+
+Backend
+pip install -r requirements.txt
+python app.py
